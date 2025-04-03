@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard';
 import AdminPanel from './components/AdminPanel';
 import Reports from './components/Reports';
 import Login from './components/Login';
-import Reg from './components/Register';
+import Signup from './components/Register';
 import axios from 'axios';
 
 // Axios Interceptor
@@ -75,7 +75,7 @@ function App() {
                                         <NavLink className="nav-link" to="/login">Login</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/reg">Register</NavLink>
+                                        <NavLink className="nav-link" to="/Register">Register</NavLink>
                                     </li>
                                 </>
                             )}
@@ -89,7 +89,7 @@ function App() {
                     <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />} />
                     <Route path="/reports" element={token ? <Reports /> : <Navigate to="/login" />} />
                     <Route path="/login" element={<Login setToken={handleSetToken} />} />
-                    <Route path="/reg" element={<Reg />} />
+                    <Route path="/Register" element={<Signup />} />
                     {role === 'Admin' && <Route path="/admin" element={<AdminPanel />} />}
                 </Routes>
             </div>

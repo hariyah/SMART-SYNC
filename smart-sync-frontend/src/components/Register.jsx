@@ -14,7 +14,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { username, password, role });
+      const response = await axios.post('http://localhost:5000/api/auth/Register', { username, password, role });
       setMessage(response.data.message);
       setError(null);
       setTimeout(() => navigate('/login'), 3000);
